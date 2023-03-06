@@ -1,12 +1,22 @@
 :host {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+data {
   color: purple;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  margin: 0.5em;
+}
+
+:host {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   font-family: system-ui, sans-serif;
 }
 data {
-  color: purple;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,24 +28,20 @@ data {
   min-height: 200px;
 }
 data span {
-  color: purple;
   font-size: 2rem;
   font-weight: bold;
 }
 data p {
-  color: purple;
   font-size: 1rem;
 }
 
 codewars-badges {
-  color: purple;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
 data {
-  color: purple;
   display: block;
   margin-bottom: 1rem;
   text-align: center;

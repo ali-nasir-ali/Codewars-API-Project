@@ -102,49 +102,53 @@ class CodeWarsBadg extends HTMLElement {
   }
   render() {
     this.shadowRoot.innerHTML = `
-    <style>
-    @import url( 'style.css' )
-      :host {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      data {
-        color: purple;
-        border: 3px solid;
-        padding: 0.25em 0.5em;
-        margin: 0.5em;
-      }
-      ${this.userData
-        .map(
-          (user) => `
+      <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        th, td {
+          border: 1px solid black;
+          padding: 8px;
+          text-align: left;
+        }
+        th {
+          background-color: #f2f2f2;
+        }
+        ${this.userData
+          .map(
+            (user) => `
             :host([data-user="${user.username}"]) {
               --rank: ${user.color};
               font: 600 100%/1 system-ui, sans-serif;
             }
-            :host([data-user="${user.username}"]) data { 
+            :host([data-user="${user.username}"]) td.rank { 
               color: var(--rank);
+              font-weight: bold;
             }
+            `
+          )
+          .join("")}
+      </style>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Rank</th>
+          <th>Honor</th>
+        </tr>
+        ${this.userData
+          .map(
+            (user) => `
+            <tr data-user="${user.username}">
+              <td>${user.name}</td>
+              <td class="rank">${user.ranks.overall.name}</td>
+              <td>${user.honor}</td>
+            </tr>
           `
-        )
-        .join("")}
-    </style>
-    ${this.userData
-      .map(
-        (user) => `
-          <data value="${user.ranks.overall.score}" data-user="${user.username}">
-            ${user.name}
-          </data>
-          <data value="${user.ranks.overall.score}" data-user="${user.username}">
-            ${user.ranks.overall.name}
-          </data>
-          <data value="${user.ranks.overall.score}" data-user="${user.username}">
-            ${user.honor}
-          </data>
-        `
-      )
-      .join("")}
-  `;
+          )
+          .join("")}
+      </table>
+    `;
   }
 }
 
