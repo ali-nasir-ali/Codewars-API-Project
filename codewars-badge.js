@@ -22,9 +22,7 @@ class CodeWarsBadge extends HTMLElement {
 
   // fetch the data from the Codewars API
   async fetchActivity() {
-    const response = await fetch(
-      `https://www.codewars.com/api/v1/users/${this.userName}`
-    );
+    const response = await fetch(`https://www.codewars.com/api/v1/users/${this.userName}`);
     const data = await response.json();
     this.userData = data; // set the userData property with the fetched data
   }
@@ -42,8 +40,14 @@ class CodeWarsBadge extends HTMLElement {
             padding: .25em .5em;
         }      
       </style>
+      <data value="${this.userData.ranks.overall.score}">
+        ${this.userData.name}
+        </data>
         <data value="${this.userData.ranks.overall.score}">
         ${this.userData.ranks.overall.name}
+        </data>
+        <data value="${this.userData.ranks.overall.score}">
+        ${this.userData.honor}
         </data>`;
   }
 }
