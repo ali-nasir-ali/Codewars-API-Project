@@ -6,6 +6,48 @@
     <title>Codewars Badge</title>
     <meta name="description" content="Extending HTML to create a new component" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :host {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        font-family: system-ui, sans-serif;
+      }
+      data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 3px solid;
+        padding: 1rem;
+        min-width: 200px;
+        min-height: 200px;
+      }
+      data span {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      data p {
+        font-size: 1rem;
+      }
+      
+  codewars-badges {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  data {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--rank);
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+  }
+</style>
+    </style>
   </head>
   <body>
     <codewars-badge></codewars-badge>
