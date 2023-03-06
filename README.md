@@ -1,3 +1,7 @@
+# netlify website site link
+
+https://codewars-glasgow-6.netlify.app/
+
 # Codewars-Integration
 
 Let's play with grabbing some data from an API and displaying it on a website. We will be using the the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to make requests to the [Codewars API](https://dev.codewars.com/#get-user) and the [Web Components API](https://developer.mozilla.org/en-US/docs/Web/Web_Components) to display the data we get back. Let's go!
