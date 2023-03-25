@@ -2,7 +2,7 @@ class CodeWarsBadg extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    this.userNames = ["SallyMcGrath", "CodeYourFuture", "ali-nasir-ali", "hussein-alsayed", "AppolinFotso"]; // An array of usernames
+    this.userNames = ["SallyMcGrath", "CodeYourFuture", "ali-nasir-ali", "hussein-alsayed", "AppolinFotso", "ManSangSin"]; // An array of usernames
     this.userData = [];
   }
 
